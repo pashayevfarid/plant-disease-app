@@ -61,7 +61,7 @@ if app_mode == "Home":
     Our goal is to assist in the early identification of plant diseases, enabling you to take swift action to protect your crops and ensure a healthier harvest.
                 
     ### How It Works
-    1. **Upload or Capture Image:** Navigate to the **Disease Recognition** page and either upload an image  of a plant or capture one directly using your camera.
+    1. **Upload or Capture Image:** Navigate to the **Disease Recognition** page and either upload an image  of a plant or capture one directly using your camera (coming soon).
     2. **Analysis:** Our advanced machine learning model processes the image to detect signs of diseases based on trained algorithms.
     3. **Results:** Once the analysis is complete, you’ll see the predicted disease along with its symptoms and recommended treatment.
                 
@@ -74,6 +74,8 @@ if app_mode == "Home":
 elif app_mode == "About":
     st.header("About")
     st.markdown("""
+                #### About Model
+                Model is based on VGG-16 architecture.
                 #### About Dataset
                 This dataset consists of about 77K rgb images of healthy and diseased crop leaves which is categorized into 33 different classes.
                 The total dataset is divided into 80/20 ratio of training and validation set preserving the directory structure.
