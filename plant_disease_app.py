@@ -96,7 +96,7 @@ elif app_mode == "Disease Recognition":
      
     # Show the uploaded image
     if uploaded_image is not None:
-        st.image(uploaded_image, use_column_width=True)
+        st.image(uploaded_image, use_container_width=True)
         test_image_path = "uploaded_image.jpg"
         with open(test_image_path, "wb") as f:
             f.write(uploaded_image.getbuffer())
