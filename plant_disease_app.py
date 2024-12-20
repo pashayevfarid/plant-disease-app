@@ -54,20 +54,19 @@ app_mode = st.sidebar.selectbox("Select Page", ["Home", "About", "Disease Recogn
 if app_mode == "Home":
     st.header("🌿 Plant Disease Detection Tool 🌿")
     image_url = "https://media.licdn.com/dms/image/v2/D4D22AQHDxqMMS4KVYA/feedshare-shrink_800/feedshare-shrink_800/0/1682330831854?e=2147483647&v=beta&t=1cFDdyhOY2CoFKXM-H1De2qeraQUv3zPbYFhArXEkQA"
-    st.image(image_url, use_column_width=True)
+    st.image(image_url, use_container_width=True)
     st.markdown("""
-    Welcome to the Plant Disease Recognition System! 🌿🔍
+    Welcome to the Plant Disease Recognition System! 
     
     Our goal is to assist in the early identification of plant diseases, enabling you to take swift action to protect your crops and ensure a healthier harvest.
                 
     ### How It Works
-    1. **Upload or Capture Image:** Navigate to the **Disease Recognition** page and either upload an image  of a plant or capture one directly using your camera (coming soon).
-    2. **Analysis:** Our advanced machine learning model processes the image to detect signs of diseases based on trained algorithms.
+    1. **Upload Image:** Navigate to the **Disease Recognition** page and either upload an image  of a plant or capture one directly using your camera (coming soon).
+    2. **Analysis:** Our advanced deep learning model processes the image to detect signs of diseases based on trained algorithms.
     3. **Results:** Once the analysis is complete, you’ll see the predicted disease along with its symptoms and recommended treatment.
                 
     ### Get Started
-    Click on the **Disease Recognition** page in the sidebar to upload or capture an image and begin identifying plant diseases efficiently. 
-    ## Together, we can help safeguard agriculture!
+    Click on the **Disease Recognition** page in the sidebar to upload an image and begin identifying plant diseases efficiently. 
     """)
 
 # About Project
@@ -103,13 +102,13 @@ elif app_mode == "Disease Recognition":
         with open(test_image_path, "wb") as f:
             f.write(uploaded_image.getbuffer())
     else:
-        st.warning("Please upload or capture an image to proceed.")
+        st.warning("Please upload an image to proceed.")
 
     # Prediction Button
     if uploaded_image and st.button("Predict"):
         st.write("Analyzing the image...")
         
-        # Use the path for the uploaded or captured image
+        # Use the path for the uploaded
         test_image_path = "uploaded_image.jpg"
         
         result_index, predicted_probability = model_prediction(test_image_path)
